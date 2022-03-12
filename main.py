@@ -4,7 +4,7 @@ import math
 
 root = Tk()
 root.title("Random Texturepack Generator")
-root.geometry("600x600")
+root.geometry("700x600")
 root.resizable(False, False)
 root.config(bg='#2F3136')
 
