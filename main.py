@@ -33,7 +33,7 @@ def maximize():
 title_bar = Frame(root, bg = '#2F3136', relief = 'raised')
 title_bar.pack(side=TOP, fill=BOTH)
 
-title = Label(title_bar, text = 'Random Texturepack Generator', bg = '#2F3136', fg = "#F0F0F0")
+title = Label(title_bar, text = 'Random Texturepack Generator     ', bg = '#2F3136', fg = "#F0F0F0")
 title.pack(side=RIGHT)
 
 title_bar.bind('<B1-Motion>', move)
