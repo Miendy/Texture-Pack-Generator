@@ -31,7 +31,7 @@ def maximize():
         # now it is not maximized
 
 def generateCommand():
-    print("Generating...")
+    print("")
 
 title_bar = Frame(root, bg = '#2F3136', relief = 'raised')
 title_bar.pack(side=TOP, fill=BOTH)
@@ -48,7 +48,7 @@ expand_button = Button(title_bar, text='   🗖   ', command = maximize, bg = '#
 expand_button.pack(side = LEFT)
 
 root.loadimage1 = tk.PhotoImage(file="button.png")
-root.generateButton = tk.Button(root, image=root.loadimage1, activebackground='#2F3136', cursor = "tcross", command = generateCommand)
+root.generateButton = tk.Button(root, image=root.loadimage1, activebackground='#2F3136', cursor = "exchange", command = generateCommand)
 root.generateButton["bg"] = "#2F3136"
 root.generateButton["border"] = "0"
 root.generateButton.pack(side = BOTTOM, pady = 50)
@@ -59,6 +59,10 @@ root.tagsButton["bg"] = "#2F3136"
 root.tagsButton["border"] = "0"
 root.tagsButton.pack(side = TOP, pady = 10)
 
-tagsBox = Text(root, height = 10 , width = 5)
+root.loadimage3 = tk.PhotoImage(file="tags_box.png")
+root.tagsButton = tk.Label(root, image=root.loadimage3, activebackground='#2F3136')
+root.tagsButton["bg"] = "#2F3136"
+root.tagsButton["border"] = "0"
+root.tagsButton.pack(side = TOP, pady = 10)
 
 root.mainloop()
