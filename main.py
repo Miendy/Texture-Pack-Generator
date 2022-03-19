@@ -59,10 +59,4 @@ root.tagsButton["bg"] = "#2F3136"
 root.tagsButton["border"] = "0"
 root.tagsButton.pack(side = TOP, pady = 10)
 
-root.loadimage3 = tk.PhotoImage(file="tags_box.png")
-root.tagsButton = tk.Label(root, image=root.loadimage3, activebackground='#2F3136')
-root.tagsButton["bg"] = "#2F3136"
-root.tagsButton["border"] = "0"
-root.tagsButton.pack(side = TOP, pady = 10)
-
 root.mainloop()
