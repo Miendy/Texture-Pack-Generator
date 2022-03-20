@@ -24,7 +24,7 @@ def maximize():
         root.maximized = not root.maximized 
         
     else:
-        expand_button.config(text="   🟢   ")
+        expand_button.config(text="   🟡   ")
         root.geometry(root.normal_size)
         root.maximized = not root.maximized
 
@@ -32,9 +32,9 @@ def generateCommand():
     print("Generating...")
 
 title_bar = Frame(root, bg = '#2F3136', relief = 'raised')
-title_bar.pack(side=TOP, fill=BOTH)
+title_bar.pack(side = TOP, fill = BOTH)
 
-title = Label(title_bar, text = 'Random Texturepack Generator   ', bg = '#2F3136', fg = "#F0F0F0")
+title = Label(title_bar, text = 'Random Texturepack Idea Generator      ', bg = '#2F3136', fg = "#F0F0F0")
 title.pack(side = RIGHT)
 
 title_bar.bind('<B1-Motion>', move)
@@ -45,7 +45,7 @@ close_button.pack(side = LEFT)
 expand_button = Button(title_bar, text='   🟢   ', command = maximize, bg = '#2F3136', fg = "green")
 expand_button.pack(side = LEFT)
 
-root.loadimage1 = tk.PhotoImage(file="button.png")
+root.loadimage1 = tk.PhotoImage(file="generate.png")
 root.generateButton = tk.Button(root, image=root.loadimage1, activebackground='#2F3136', cursor = "tcross", command = generateCommand)
 root.generateButton["bg"] = "#2F3136"
 root.generateButton["border"] = "0"
@@ -67,9 +67,9 @@ imageLabel = Label(frame, image = txtWallpaper, bd = 0)
 imageLabel.pack()
 
 menu = StringVar()
-menu.set("Select Vertion")
+menu.set("Select Difficulty")
 
-dropDown = OptionMenu(root, menu, "1.8", "1.16", "1.17", "1.18")
+dropDown = OptionMenu(root, menu, "Easy", "Medium", "Hard", "Imossible")
 dropDown.config(bg = "#2F3136", activebackground = "#2F3136", highlightthickness = 0)
 dropDown.pack(side = BOTTOM)
 
