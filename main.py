@@ -46,7 +46,7 @@ expand_button = Button(title_bar, text='   🟢   ', command = maximize, bg = '#
 expand_button.pack(side = LEFT)
 
 root.loadimage1 = tk.PhotoImage(file="generate.png")
-root.generateButton = tk.Button(root, image=root.loadimage1, activebackground='#2F3136', cursor = "tcross", command = generateCommand)
+root.generateButton = tk.Button(root, image=root.loadimage1, activebackground='#2F3136', cursor = "exchange", command = generateCommand)
 root.generateButton["bg"] = "#2F3136"
 root.generateButton["border"] = "0"
 root.generateButton.pack(side = BOTTOM, pady = 50)
@@ -71,6 +71,6 @@ menu.set("Select Difficulty")
 
 dropDown = OptionMenu(root, menu, "Easy", "Medium", "Hard", "Impossible")
 dropDown.config(bg = "#2F3136", activebackground = "#2F3136", highlightthickness = 0)
-dropDown.pack(side = BOTTOM)
+dropDown.pack(side = BOTTOM)    
 
 root.mainloop()
