@@ -6,6 +6,7 @@ root = Tk()
 root.geometry("700x600")
 root.resizable(True, True)
 root.config(bg='#2F3136', cursor = "plus")
+root.iconbitmap ('D:\Sakif\Coding\Browski\Texture-Pack-Idea-Generator\icon.png')
 root.overrideredirect(True)
 root.eval('tk::PlaceWindow . center')
 
@@ -17,14 +18,14 @@ def move(event):
 
 def maximize():
 
-    if root.maximized == False: # if the window was not maximized
+    if root.maximized == False:
         root.normal_size = root.geometry()
-        expand_button.config(text="   🟢   ")
+        expand_button.config(text = "   🟢   ")
         root.geometry(f"{root.winfo_screenwidth()}x{root.winfo_screenheight()}+0+0")
         root.maximized = not root.maximized 
         
     else:
-        expand_button.config(text="   🟡   ")
+        expand_button.config(text = "   🟡   ")
         root.geometry(root.normal_size)
         root.maximized = not root.maximized
 
@@ -69,7 +70,7 @@ imageLabel.pack()
 menu = StringVar()
 menu.set("Select Difficulty")
 
-dropDown = OptionMenu(root, menu, "Easy", "Medium", "Hard", "Imossible")
+dropDown = OptionMenu(root, menu, "Easy", "Medium", "Hard", "Impossible")
 dropDown.config(bg = "#2F3136", activebackground = "#2F3136", highlightthickness = 0)
 dropDown.pack(side = BOTTOM)
 
