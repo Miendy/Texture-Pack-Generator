@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import *
-import math
+from PIL import ImageTk, Image
 
 root = Tk()
 root.geometry("700x600")
@@ -22,16 +22,14 @@ def maximize():
         expand_button.config(text="   🗗   ")
         root.geometry(f"{root.winfo_screenwidth()}x{root.winfo_screenheight()}+0+0")
         root.maximized = not root.maximized 
-        # now it's maximized
         
-    else: # if the window was maximized
+    else:
         expand_button.config(text="   🗖   ")
         root.geometry(root.normal_size)
         root.maximized = not root.maximized
-        # now it is not maximized
 
 def generateCommand():
-    print("")
+    print("Generating...")
 
 title_bar = Frame(root, bg = '#2F3136', relief = 'raised')
 title_bar.pack(side=TOP, fill=BOTH)
@@ -48,15 +46,24 @@ expand_button = Button(title_bar, text='   🗖   ', command = maximize, bg = '#
 expand_button.pack(side = LEFT)
 
 root.loadimage1 = tk.PhotoImage(file="button.png")
-root.generateButton = tk.Button(root, image=root.loadimage1, activebackground='#2F3136', cursor = "exchange", command = generateCommand)
+root.generateButton = tk.Button(root, image=root.loadimage1, activebackground='#2F3136', cursor = "tcross", command = generateCommand)
 root.generateButton["bg"] = "#2F3136"
 root.generateButton["border"] = "0"
 root.generateButton.pack(side = BOTTOM, pady = 50)
 
 root.loadimage2 = tk.PhotoImage(file="tags.png")
-root.tagsButton = tk.Label(root, image=root.loadimage2, activebackground='#2F3136')
+root.tagsButton = tk.Label(root, image=root.loadimage2)
 root.tagsButton["bg"] = "#2F3136"
 root.tagsButton["border"] = "0"
 root.tagsButton.pack(side = TOP, pady = 10)
+
+frame = Frame(root, width = 500, height = 300, borderwidth = 0, highlightthickness = 0, bg = "#2F3136")
+frame.pack()
+frame.place(anchor = 'center', relx = 0.5, rely = 0.5)
+
+txtWallpaper = ImageTk.PhotoImage(Image.open("text.png"))
+
+imageLabel = Label(frame, image = txtWallpaper)
+imageLabel.pack()
 
 root.mainloop()
