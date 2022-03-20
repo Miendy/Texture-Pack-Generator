@@ -59,11 +59,11 @@ root.tagsButton.pack(side = TOP, pady = 10)
 
 frame = Frame(root, width = 500, height = 300, borderwidth = 0, highlightthickness = 0, bg = "#2F3136")
 frame.pack()
-frame.place(anchor = 'center', relx = 0.5, rely = 0.5)
+frame.place(anchor = 'center', relx = 0.5, rely = 0.4)
 
 txtWallpaper = ImageTk.PhotoImage(Image.open("text.png"))
 
-imageLabel = Label(frame, image = txtWallpaper)
+imageLabel = Label(frame, image = txtWallpaper, bd = 0)
 imageLabel.pack()
 
 root.mainloop()
