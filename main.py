@@ -1,3 +1,4 @@
+from email.mime import image
 import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
@@ -19,12 +20,12 @@ def maximize():
 
     if root.maximized == False: # if the window was not maximized
         root.normal_size = root.geometry()
-        expand_button.config(text="   🗗   ")
+        expand_button.config(text="   🟢   ")
         root.geometry(f"{root.winfo_screenwidth()}x{root.winfo_screenheight()}+0+0")
         root.maximized = not root.maximized 
         
     else:
-        expand_button.config(text="   🗖   ")
+        expand_button.config(text="   🟢   ")
         root.geometry(root.normal_size)
         root.maximized = not root.maximized
 
@@ -34,19 +35,19 @@ def generateCommand():
 title_bar = Frame(root, bg = '#2F3136', relief = 'raised')
 title_bar.pack(side=TOP, fill=BOTH)
 
-title = Label(title_bar, text = 'Random Texturepack Generator', bg = '#2F3136', fg = "#F0F0F0")
+title = Label(title_bar, text = 'Texturepack Idea Generator', bg = '#2F3136', fg = "#F0F0F0")
 title.pack(side=RIGHT)
 
 title_bar.bind('<B1-Motion>', move)
 
-close_button = Button(title_bar, text='  ❌  ', command = root.destroy, bg = '#2F3136', fg = "red")
+close_button = Button(title_bar, text = "   🔴   " , command = root.destroy, bg = '#2F3136', fg = "red")
 close_button.pack(side = LEFT)
 
-expand_button = Button(title_bar, text='   🗖   ', command = maximize, bg = '#2F3136', fg = "green")
+expand_button = Button(title_bar, text='   🟢   ', command = maximize, bg = '#2F3136', fg = "green")
 expand_button.pack(side = LEFT)
 
-root.loadimage1 = tk.PhotoImage(file="button.png")
-root.generateButton = tk.Button(root, image=root.loadimage1, activebackground='#2F3136', cursor = "tcross", command = generateCommand)
+root.loadimage1 = tk.PhotoImage(file="generate.png")
+root.generateButton = tk.Button(root, image=root.loadimage1, activebackground='#2F3136', cursor = "exchange", command = generateCommand)
 root.generateButton["bg"] = "#2F3136"
 root.generateButton["border"] = "0"
 root.generateButton.pack(side = BOTTOM, pady = 50)
@@ -56,6 +57,12 @@ root.tagsButton = tk.Label(root, image=root.loadimage2)
 root.tagsButton["bg"] = "#2F3136"
 root.tagsButton["border"] = "0"
 root.tagsButton.pack(side = TOP, pady = 10)
+
+root.loadimage3 = tk.PhotoImage(file="generate.png")
+root.version1Button = tk.Button(root, image=root.loadimage3, activebackground='#2F3136', cursor = "exchange", command = generateCommand)
+root.version1Button["bg"] = "#2F3136"
+root.version1Button["border"] = "0"
+root.version1Button.pack(side = TOP, pady = 50)
 
 frame = Frame(root, width = 500, height = 300, borderwidth = 0, highlightthickness = 0, bg = "#2F3136")
 frame.pack()
