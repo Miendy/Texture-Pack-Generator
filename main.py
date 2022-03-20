@@ -6,7 +6,6 @@ root = Tk()
 root.geometry("700x600")
 root.resizable(True, True)
 root.config(bg='#2F3136', cursor = "plus")
-root.iconbitmap ('D:\Sakif\Coding\Browski\Texture-Pack-Idea-Generator\icon.png')
 root.overrideredirect(True)
 root.eval('tk::PlaceWindow . center')
 
